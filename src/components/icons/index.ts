@@ -1,0 +1,5 @@
+export { default as Check } from '@/components/icons/Check'
+export { default as Cv } from '@/components/icons/Cv'
+export { default as Dark } from '@/components/icons/Dark'
+export { default as FrontPage } from '@/components/icons/FrontPage'
+export { default as Light } from '@/components/icons/Light'

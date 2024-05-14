@@ -1,0 +1,3 @@
+{
+  "exportall.config.relExclusion": ["/src/components/footer/index.ts"]
+}
