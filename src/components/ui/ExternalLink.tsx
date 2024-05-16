@@ -6,11 +6,10 @@ export default function ExternalLink({
 }: PropsExternalLink) {
   return (
     <>
-      {' '}
       <a
         target='_blank'
         rel='noopener noreferrer'
-        className='font-light text-blue-500 underline underline-offset-4'
+        className='font-light text-blue-500 underline underline-offset-4 contrast-100'
         {...props}
       >
         {children}

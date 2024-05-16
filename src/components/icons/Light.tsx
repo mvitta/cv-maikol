@@ -1,13 +1,10 @@
-export default function Light({
-  className,
-  ...props
-}: React.ComponentProps<'svg'>) {
+export default function Light({ ...props }: React.ComponentProps<'svg'>) {
   return (
-    <button>
+    <button name='btn-light'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 -960 960 960'
-        className={`w-6 h-6 ${className}`}
+        className={`w-6 h-6`}
         fill='#000000'
         {...props}
       >

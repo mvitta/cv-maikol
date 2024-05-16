@@ -1,3 +1,8 @@
 {
-  "exportall.config.relExclusion": ["/src/components/footer/index.ts"]
+  "exportall.config.relExclusion": [
+    "/src/components/footer/index.ts",
+    "/src/components/containers/index.ts",
+    "/src/components/containers"
+  ],
+  "exportall.config.folderListener": ["/src/components/containers"]
 }

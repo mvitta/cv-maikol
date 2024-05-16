@@ -1,4 +1,5 @@
-import ExternalLink from '@/components/ExternalLink'
+import ExternalLink from '@/components/ui/ExternalLink'
+import { cn } from '@/lib/utils'
 
 interface PropsAddLinksToItem extends React.HTMLAttributes<HTMLElement> {
   words?: { text: string; url: string }[]
@@ -17,7 +18,7 @@ export default function AddLinksToItem({
 
   if (!words)
     return (
-      <li className={`mb-5 text-pretty py-1 ${className || ''}`} {...props}>
+      <li className={cn('`mb-5 text-pretty py-1', className)} {...props}>
         {p}
       </li>
     )
@@ -41,7 +42,7 @@ export default function AddLinksToItem({
   parts.push(p.substring(lastIndex))
 
   return (
-    <li className={`mb-5 text-pretty py-1 ${className || ''}`} {...props}>
+    <li className={cn('mb-5 text-pretty py-1', className)} {...props}>
       {parts}
     </li>
   )

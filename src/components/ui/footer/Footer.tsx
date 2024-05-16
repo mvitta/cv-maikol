@@ -1,4 +1,5 @@
-import { GridFooter, SocialMedia } from '@/components/footer/index'
+import GridFooter from '@/components/ui/footer/GridFooter'
+import SocialMedia from '@/components/ui/footer/SocialMedia'
 
 export default function Footer() {
   return (

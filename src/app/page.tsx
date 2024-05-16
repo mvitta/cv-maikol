@@ -1,13 +1,14 @@
-import List from '@/components/List'
-import SubTitle from '@/components/SubTitle'
-import Title from '@/components/Title'
+import List from '@/components/ui/List'
+import SubTitle from '@/components/ui/SubTitle'
+import Title from '@/components/ui/Title'
 import Container from '@/components/containers/Container'
 import FrontPage from '@/components/icons/FrontPage'
 import json from '@/data/profile.json'
-import AddLinks from '@/components/formatters/AddLinksToParagraph'
 import AddLinksToItem from '@/components/formatters/AddLinksToItem'
 import AddLinksToParagraph from '@/components/formatters/AddLinksToParagraph'
 import ContainerMain from '@/components/containers/ContainerMain'
+import InternalLink from '@/components/ui/InternalLink'
+import { cn } from '@/lib/utils'
 
 const {
   listContent,
@@ -20,8 +21,10 @@ export default function Home() {
       <section>
         <FrontPage />
         <div className='pt-24 pb-64'>
-          <Title>Maikol Vitta - Desarrollador Frontend Jr.</Title>
-          <AddLinks
+          <Title className='mb-8 text-[40px]'>
+            Maikol Vitta - Desarrollador Frontend Jr.
+          </Title>
+          <AddLinksToParagraph
             words={[
               { text: 'MisiónTic 2022', url: '' },
               { text: 'universidad del norte', url: '' },
@@ -29,23 +32,26 @@ export default function Home() {
             ]}
           >
             {description}
-          </AddLinks>
+          </AddLinksToParagraph>
           <div className='w-full flex flex-wrap space-x-7 justify-center py-8'>
-            <a
-              className='border rounded py-2 px-3 bg-slate-800 text-white'
-              href='#habilidades'
-            >
-              Habilidades
-            </a>
-            <a
-              className='border rounded py-2 px-3 bg-blue-900 text-white'
-              href='#proyectos'
-            >
-              Proyectos
-            </a>
+            {[
+              { text: 'Habilidades', href: '#habilidades' },
+              { text: 'Proyectos', href: '#proyectos' },
+            ].map(({ text, href }) => (
+              <InternalLink
+                href={href}
+                className={cn(
+                  text === 'Habilidades' && 'bg-blue-900 text-white',
+                  text === 'Proyectos' && 'bg-slate-700 text-white'
+                )}
+                text={text}
+                key={crypto.randomUUID()}
+              />
+            ))}
           </div>
         </div>
         <Container id='habilidades'>
+          <SubTitle>Habilidades</SubTitle>
           <List className='list-image-[url(../components/icons/check.svg)] list-inside'>
             {listContent.map((item) => (
               <AddLinksToItem

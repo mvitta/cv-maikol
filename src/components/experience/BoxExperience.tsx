@@ -1,6 +1,11 @@
-import Item from '../Item'
-import List from '../List'
+import { cn } from '@/lib/utils'
+import Item from '../ui/Item'
+import List from '../ui/List'
 import Endeavor from './icons/Endeavor'
+import Unknown from './icons/Unknown'
+import { useState } from 'react'
+import Button from './Button'
+import Certification from '../certifications/icons/Certification'
 
 interface PropsBoxExperience {
   job: string
@@ -8,6 +13,8 @@ interface PropsBoxExperience {
   time: string
   location: string
   description: string[]
+  Icon: JSX.Element
+  index?: number
 }
 
 export default function BoxExperience({
@@ -16,20 +23,26 @@ export default function BoxExperience({
   time,
   location,
   description,
+  Icon,
+  index,
 }: PropsBoxExperience) {
+  ;[]
   return (
-    <section className='grid grid-cols-[60px,_1fr] min-w-[300px] max-w-[700px] mx-auto shadow-md border-t-4 border-blue-500 rounded p-2 mb-6'>
-      <div className=''>
-        <Endeavor width={50} height={50} />
-      </div>
+    <section className='px-2 pt-3 pb-20 grid grid-cols-[auto,_1fr] min-w-[300px] max-w-[700px] mx-auto shadow-md border-t-4 border-blue-500 rounded'>
+      <div className='px-3'>{Icon}</div>
       <div className='text-start'>
+        {/* info job */}
         <div className='flex flex-col mb-4'>
           <div className='font-bold'>{job}</div>
           <div>{company}</div>
           <div className='text-gray-600'>{time}</div>
           <div className='text-gray-600'>{location}</div>
         </div>
-        <div>
+        {/* description job */}
+        <div
+          id={`description-job-${index}`}
+          className='h-[100px] overflow-y-hidden'
+        >
           <List className='list-inside list-["✅"]'>
             {description.map((experience) => (
               <Item className='mb-2' key={crypto.randomUUID()}>
@@ -37,6 +50,9 @@ export default function BoxExperience({
               </Item>
             ))}
           </List>
+        </div>
+        <div className='relative w-full h-[60px]'>
+          <Button id={`description-job-${index}`} />
         </div>
       </div>
     </section>

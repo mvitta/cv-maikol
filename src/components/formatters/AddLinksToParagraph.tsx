@@ -1,4 +1,5 @@
-import ExternalLink from '../ExternalLink'
+import { cn } from '@/lib/utils'
+import ExternalLink from '../ui/ExternalLink'
 
 interface PropsAddLinksToParagraph extends React.HTMLAttributes<HTMLElement> {
   words?: { text: string; url: string }[]
@@ -17,7 +18,7 @@ export default function AddLinksToParagraph({
 
   if (!words)
     return (
-      <p className={`mb-5 text-pretty py-1 ${className || ''}`} {...props}>
+      <p className={cn('mb-5 text-pretty py-1', className)} {...props}>
         {p}
       </p>
     )
@@ -41,7 +42,7 @@ export default function AddLinksToParagraph({
   parts.push(p.substring(lastIndex))
 
   return (
-    <p className={`mb-5 text-pretty py-1 ${className || ''}`} {...props}>
+    <p className={cn('mb-5 text-pretty py-1', className)} {...props}>
       {parts}
     </p>
   )

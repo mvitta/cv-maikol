@@ -1,3 +1,5 @@
+import { cn } from '@/lib/utils'
+
 export default function ContainerHeader({
   children,
   className,
@@ -6,7 +8,10 @@ export default function ContainerHeader({
   return (
     <div
       id='container-header'
-      className={`p-3 flex justify-center gap-x-10 gap-y-4 lg:justify-between items-center flex-wrap ${className}`}
+      className={cn(
+        'p-3 flex justify-center gap-x-10 gap-y-4 lg:justify-between items-center flex-wrap',
+        className
+      )}
       {...props}
     >
       {children}

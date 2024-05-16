@@ -1,3 +1,10 @@
+import BoxCertifications from '@/components/certifications/BoxCertifications'
+import ContainerMain from '@/components/containers/ContainerMain'
+
 export default function Certifications() {
-  return <main className='text-center'> certifications</main>
+  return (
+    <ContainerMain>
+      <BoxCertifications />
+    </ContainerMain>
+  )
 }
