@@ -5,7 +5,7 @@ import Endeavor from './icons/Endeavor'
 import Unknown from './icons/Unknown'
 import { useState } from 'react'
 import Button from './Button'
-import Certification from '../certifications/icons/Certification'
+import Certification from '../certifications/icons/IconCertification'
 
 interface PropsBoxExperience {
   job: string

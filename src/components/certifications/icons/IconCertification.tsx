@@ -1,4 +1,10 @@
-export default function Certification() {
+import { ComponentProps } from 'react'
+
+export default function Certification({
+  width,
+  height,
+  ...props
+}: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -7,6 +13,9 @@ export default function Certification() {
       id='Layer_1'
       viewBox='0 0 501.333 501.333'
       xmlSpace='preserve'
+      width={width}
+      height={height}
+      {...props}
     >
       <rect style={{ fill: '#F6F7F8' }} width='406.4' height='501.333' />
       <rect style={{ fill: '#637888' }} width='406.4' height='29.867' />
