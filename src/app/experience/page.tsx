@@ -1,5 +1,5 @@
 import BoxExperience from '@/components/experience/BoxExperience'
-import json from '@/app/experience/experience.json'
+import json from '@/data/experience.json'
 import ContainerMain from '@/components/containers/ContainerMain'
 import Container from '@/components/containers/Container'
 import Unknown from '@/components/experience/icons/Unknown'

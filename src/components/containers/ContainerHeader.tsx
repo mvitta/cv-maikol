@@ -9,7 +9,7 @@ export default function ContainerHeader({
     <div
       id='container-header'
       className={cn(
-        'p-3 flex justify-center gap-x-10 gap-y-4 lg:justify-between items-center flex-wrap',
+        'flex justify-center gap-x-10 gap-y-4 lg:justify-between items-center flex-wrap',
         className
       )}
       {...props}

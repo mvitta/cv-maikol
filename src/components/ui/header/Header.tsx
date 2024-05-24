@@ -1,41 +1,93 @@
+'use client'
+
 import Cv from '../../icons/Cv'
-import Dark from '@/components/icons/Dark'
-import Light from '@/components/icons/Light'
 import ContainerHeader from '@/components/containers/ContainerHeader'
 import MenuItem from '@/components/ui/header/MenuItem'
 import NavApp from '@/components/ui/header/NavApp'
+import Github from '@/components/icons/social_media/Github'
+import Linkedin from '@/components/icons/social_media/Linkedin'
+import { useEffect, useRef } from 'react'
+import DarkMode from '../DarkMode'
 
 type PropsHeader = React.HTMLAttributes<HTMLElement>
 
 export default function Header({ children, ...props }: PropsHeader) {
+  const refHeader = useRef<HTMLDivElement>(null)
   const items = [
     { pathname: '/', text: 'Perfil' },
     { pathname: '/experience', text: 'Experiencia Laboral' },
     { pathname: '/certifications', text: 'Certificaciones' },
   ]
+  const iconsSocialMedia = [
+    { Icon: Github, url: 'https://github.com/mvitta' },
+    { Icon: Linkedin, url: 'https://www.linkedin.com/in/maikoldevjs/' },
+  ]
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (refHeader.current) {
+        const scrollY = window.scrollY
+        if (scrollY > 0) {
+          refHeader.current.classList.add(
+            'bg-white',
+            'z-[9999]',
+            'fixed',
+            'opacity-90',
+            'dark:bg-dark-mode'
+          )
+        }
+        if (scrollY === 0) {
+          refHeader.current.classList.remove(
+            'bg-white',
+            'z-[9999]',
+            'fixed',
+            'opacity-90',
+            'dark:bg-dark-mode'
+          )
+        }
+      }
+    })
+  }, [])
+
   return (
-    <header {...props}>
-      <ContainerHeader className='shadow-md shadow-blue-950'>
-        <section>
-          <Cv />
-        </section>
-        <section>
-          <NavApp>
-            {items.map(({ pathname, text }) => {
-              return (
-                <MenuItem
-                  pathname={pathname}
-                  className='mr-4 text-center hover:text-slate-950 hover:font-bold transition-all duration-200 ease-out'
-                  text={text}
-                  key={crypto.randomUUID()}
-                />
-              )
-            })}
-          </NavApp>
-        </section>
-        <section>
-          <Dark />
-          <Light />
+    <header ref={refHeader} {...props}>
+      <ContainerHeader className='shadow-md  px-14'>
+        <div className='flex flex-wrap justify-center items-center gap-x-3 gap-y-3'>
+          <section>
+            <Cv />
+          </section>
+          <section>
+            <NavApp>
+              {items.map(({ pathname, text }) => {
+                return (
+                  <MenuItem
+                    pathname={pathname}
+                    className='mr-4 text-center'
+                    text={text}
+                    key={crypto.randomUUID()}
+                  />
+                )
+              })}
+            </NavApp>
+          </section>
+        </div>
+        <section className='flex gap-x-3'>
+          {iconsSocialMedia.map(({ Icon, url }) => (
+            <a
+              href={url}
+              target='_blank'
+              rel='noopener noreferrer'
+              key={crypto.randomUUID()}
+              aria-label='icons about social networks'
+            >
+              <Icon
+                width={30}
+                height={30}
+                className='dark:fill-dark-mode-fill-icons dark:hover:fill-white'
+              />
+            </a>
+          ))}
+          <DarkMode />
         </section>
       </ContainerHeader>
       {children}

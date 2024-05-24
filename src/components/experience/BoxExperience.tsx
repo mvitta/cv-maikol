@@ -33,17 +33,17 @@ export default function BoxExperience({
       <div className='text-start'>
         {/* info job */}
         <div className='flex flex-col mb-4'>
-          <div className='font-bold'>{job}</div>
-          <div>{company}</div>
-          <div className='text-gray-600'>{time}</div>
-          <div className='text-gray-600'>{location}</div>
+          <div className='font-bold dark:text-white'>{job}</div>
+          <div className='dark:text-white'>{company}</div>
+          <div className='text-gray-600 dark:text-slate-400'>{time}</div>
+          <div className='text-gray-600 dark:text-slate-400'>{location}</div>
         </div>
         {/* description job */}
         <div
           id={`description-job-${index}`}
           className='h-[100px] overflow-y-hidden'
         >
-          <List className='list-inside list-["✅"]'>
+          <List className='list-inside list-["✅"] dark:text-dark-mode-text-p'>
             {description.map((experience) => (
               <Item className='mb-2' key={crypto.randomUUID()}>
                 {experience}

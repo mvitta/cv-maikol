@@ -3,6 +3,7 @@ import IconCertification from './icons/IconCertification'
 import IconLinkExternal from './icons/IconLinkExternal'
 import { twMerge } from 'tailwind-merge'
 import IconCompany from '../icons/IconCompany'
+import Badges from '../ui/Badges'
 
 interface PropsCertifications {
   title: string
@@ -10,6 +11,7 @@ interface PropsCertifications {
   expedition_date: string
   url_certification: string
   institution_logo?: string
+  technologie?: string[]
 }
 
 export default function BoxCertifications({
@@ -18,6 +20,7 @@ export default function BoxCertifications({
   expedition_date,
   url_certification,
   institution_logo,
+  technologie,
 }: PropsCertifications) {
   return (
     <section
@@ -48,13 +51,17 @@ export default function BoxCertifications({
             rel='noopener noreferrer'
             className={twMerge(
               'font-bold',
-              'hover:underline hover:underline-offset-4 hover:text-blue-500'
+              'hover:underline hover:underline-offset-4 hover:text-blue-500',
+              'dark:text-white'
             )}
           >
             {title}
           </a>
-          <div>{institution}</div>
-          <div className='text-gray-600'>{expedition_date}</div>
+          <div className='dark:text-dark-mode-text-p'>{institution}</div>
+          <div className='text-gray-600 dark:text-gray-400'>
+            {expedition_date}
+          </div>
+          <div>{<Badges technologies={technologie} />}</div>
         </div>
         <div>
           <a
@@ -63,7 +70,8 @@ export default function BoxCertifications({
               'flex items-center justify-items-center',
               'py-1 px-6 border border-black w-1/2 rounded-md',
               'hover:text-white hover:border-white hover:bg-blue-600 hover:contrast-200',
-              'transition duration-100 ease-out'
+              'transition duration-100 ease-out',
+              'dark:text-dark-mode-text-p dark:border-white'
             )}
             target='_blank'
             rel='noopener noreferrer'

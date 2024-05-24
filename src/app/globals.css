@@ -5,3 +5,55 @@
 main {
   min-height: 100vh;
 }
+
+.icons {
+  overflow: hidden;
+  /* screen less than 640px*/
+  width: 350px;
+  padding: 1rem 0;
+  margin: 0 auto;
+  display: flex;
+}
+
+/* screen larger than 640px */
+@media (min-width: 640px) {
+  .icons {
+    width: 450px;
+  }
+}
+
+/* screen larger than 1024px */
+@media (min-width: 1024px) {
+  .icons {
+    width: 600px;
+  }
+}
+
+.icons-slide {
+  display: flex;
+  animation: 20s slide infinite linear;
+  -webkit-animation: 20s slide infinite linear;
+}
+
+.icons:hover .icons-slide {
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
+
+.icons .icons-slide .icon-svg:hover {
+  transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  transition: transform 300ms ease-out;
+  -webkit-transition: transform 300ms ease-out;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+  }
+}

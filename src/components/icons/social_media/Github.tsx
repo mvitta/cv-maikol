@@ -1,11 +1,10 @@
+import { cn } from '@/lib/utils'
 import type { ComponentProps } from 'react'
 
-const Github = ({ width, height, ...props }: ComponentProps<'svg'>) => (
+const Github = ({ className, ...props }: ComponentProps<'svg'>) => (
   <svg
+    className={cn(className)}
     viewBox='0 0 256 250'
-    width={width}
-    height={height}
-    fill='#ffffff'
     xmlns='http://www.w3.org/2000/svg'
     preserveAspectRatio='xMidYMid'
     {...props}

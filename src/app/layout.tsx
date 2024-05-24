@@ -18,8 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${roboto_mono.className} antialiased min-w-min`}>
-        <Header />
+      <body
+        className={`${roboto_mono.className} antialiased min-w-min dark:bg-dark-mode`}
+      >
+        <Header className='w-full top-0 transition' />
         {children}
         <Footer />
       </body>

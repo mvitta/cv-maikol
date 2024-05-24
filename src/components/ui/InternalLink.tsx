@@ -6,6 +6,7 @@ interface PropsInternalLink
 }
 
 export default function IternalLink({
+  children,
   text,
   className,
   href,
@@ -17,6 +18,7 @@ export default function IternalLink({
       href={href}
       {...props}
     >
+      {children}
       {text}
     </a>
   )

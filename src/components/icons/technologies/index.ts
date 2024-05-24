@@ -1,0 +1,8 @@
+export { default as IconGit } from './IconGit'
+export { default as IconNextJs } from './IconNextJs'
+export { default as IconNode } from './IconNode'
+export { default as IconPrismaORM } from './IconPrismaORM'
+export { default as IconPython } from './IconPython'
+export { default as IconTypeScript } from './IconTypeScript'
+export { default as IconGolang } from './IconGolang'
+export { default as IconTailwind } from './IconTailwind'

@@ -22,10 +22,15 @@ export default function MenuItem({
       <li
         className={cn(
           // tailwindCSS default li
-          'text-xl list-inside list-none text-slate-600',
+          'font-light text-xl list-inside list-none text-slate-600',
+          // hover
+          'hover:text-slate-950 hover:font-bold',
+          // animation
+          'transition-all duration-200 ease-out',
           // if pathname is equal to path -> usePathname()
-          path === pathname &&
-            'ring-1 ring-slate-900 rounded-sm font-bold text-slate-950',
+          path === pathname && 'font-bold text-slate-900',
+          //dark mode
+          'dark:text-dark-mode-text-items dark:hover:text-white',
           className
         )}
         {...props}
