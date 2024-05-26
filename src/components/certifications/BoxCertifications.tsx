@@ -27,7 +27,8 @@ export default function BoxCertifications({
       className={twMerge(
         'mb-7 px-2 pt-3 pb-20',
         'grid grid-cols-[auto,_1fr] min-w-[300px] max-w-[700px]',
-        'mx-auto shadow-md border-t-4 border-blue-500 rounded'
+        'mx-auto shadow-md border-t-4 border-blue-500 rounded',
+        'dark:shadow-white'
       )}
     >
       <div className='px-3'>

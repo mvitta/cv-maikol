@@ -20,7 +20,7 @@ export default function Button({ id, ...props }: PropsButton) {
         }}
         {...props}
       >
-        <span className='text-blue-700 contrast-200 hover:text-blue-500'>
+        <span className='text-blue-600 contrast-200 hover:text-blue-500 dark:hover:text-blue-400'>
           ...ver mas
         </span>
       </button>

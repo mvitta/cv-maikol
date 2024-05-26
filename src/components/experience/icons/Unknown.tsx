@@ -11,6 +11,7 @@ export default function Unknown({
       fill='#000000'
       width={width}
       height={height}
+      className='dark:fill-white'
       viewBox='0 0 50 50'
       {...props}
     >

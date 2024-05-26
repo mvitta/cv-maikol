@@ -5,25 +5,43 @@ import Dark from '../icons/Dark'
 import Light from '../icons/Light'
 
 export default function DarkMode() {
-  const [darkMode, setDarkMode] = useState(false)
-  const reftButton = useRef<HTMLButtonElement>(null)
+  const [theme, setDarkMode] = useState<'light' | 'dark'>(() => {
+    const prefersDarkMode = window.matchMedia(
+      '(prefers-color-scheme : dark)'
+    ).matches
+    if (prefersDarkMode) {
+      localStorage.setItem('theme', 'dark')
+      return 'dark'
+    }
+    localStorage.setItem('theme', 'light')
+    return 'light'
+  })
 
-  const handlerCLick: MouseEventHandler = (e) => {
-    setDarkMode(!darkMode)
+  const handlerCLick: MouseEventHandler = () => {
+    setDarkMode((preTheme) => {
+      if (preTheme === 'light') {
+        localStorage.setItem('theme', 'light')
+        return 'dark'
+      }
+      localStorage.setItem('theme', 'light')
+      return 'light'
+    })
   }
 
   useEffect(() => {
+    console.log(localStorage.getItem('theme'))
+
     const doc = document.documentElement
-    if (darkMode) {
+    if (localStorage.getItem('theme') === 'dark') {
       doc.classList.add('dark')
     } else {
       doc.classList.remove('dark')
     }
-  }, [darkMode])
+  }, [theme])
 
   return (
     <button onClick={handlerCLick}>
-      {darkMode ? (
+      {theme === 'dark' ? (
         <Dark className='dark:fill-dark-mode-fill-icons dark:hover:fill-white' />
       ) : (
         <Light className='dark:fill-dark-mode-fill-icons dark:hover:fill-white' />

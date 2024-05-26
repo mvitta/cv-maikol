@@ -9,12 +9,12 @@ export default function SocialMedia() {
   return (
     <section className='flex justify-around items-center gap-2'>
       <div className='flex flex-wrap gap-2'>
-        <span>
+        <span className='block w-full'>
           <svg
+            className='inline-block mr-4'
             xmlns='http://www.w3.org/2000/svg'
             xmlnsXlink='http://www.w3.org/1999/xlink'
             version='1.1'
-            id='DESIGN'
             width='30px'
             height='30px'
             viewBox='0 0 1800 1800'
@@ -42,8 +42,32 @@ export default function SocialMedia() {
               </g>
             </g>
           </svg>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            xmlnsXlink='http://www.w3.org/1999/xlink'
+            width='30px'
+            height='30px'
+            viewBox='0 0 36 36'
+            aria-hidden='true'
+            role='img'
+            className='inline-block'
+            preserveAspectRatio='xMidYMid meet'
+          >
+            <path
+              fill='#FBD116'
+              d='M32 5H4a4 4 0 0 0-4 4v9h36V9a4 4 0 0 0-4-4z'
+            />
+            <path fill='#22408C' d='M0 18h36v7H0z' />
+            <path
+              fill='#CE2028'
+              d='M0 27a4 4 0 0 0 4 4h28a4 4 0 0 0 4-4v-2H0v2z'
+            />
+          </svg>
         </span>
-        <span>Diseñado y construido por Maikol Vitta 2024</span>
+        <span className='block w-full'>
+          {'❮❯ '}Diseñado y construido por Maikol Vitta 2024
+        </span>
+        <span className='block w-full'>Barranquilla - Colombia</span>
       </div>
       <div className='flex gap-x-3'>
         {iconsSocialMedia.map(({ Icon, url }) => (
