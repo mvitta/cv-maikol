@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { Roboto_Mono } from 'next/font/google'
-import './globals.css'
 import Header from '@/components/ui/header/Header'
 import Footer from '@/components/ui/footer/Footer'
+import Providers from '@/context/providers'
+import './globals.css'
 
 const roboto_mono = Roboto_Mono({ subsets: ['latin'] })
 
@@ -17,13 +18,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <body
         className={`${roboto_mono.className} antialiased min-w-min dark:bg-dark-mode`}
       >
-        <Header className='w-full top-0 transition' />
-        {children}
-        <Footer />
+        <Providers>
+          <Header className='pb-4 w-full top-0 transition shadow-md bg-gray-50 dark:bg-dark-mode dark:shadow-slate-800' />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   )

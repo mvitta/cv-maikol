@@ -28,14 +28,14 @@ export default function MenuItem({
           // animation
           'transition-all duration-200 ease-out',
           // if pathname is equal to path -> usePathname()
-          path === pathname && 'font-bold text-slate-900',
+          path === pathname && 'font-bold text-slate-900 dark:text-white',
           //dark mode
           'dark:text-dark-mode-text-items dark:hover:text-white',
           className
         )}
         {...props}
       >
-        <Link href={pathname} className='py-4 px-3'>
+        <Link href={pathname} className='py-4 px-3' scroll={false}>
           {text}
         </Link>
       </li>

@@ -46,10 +46,12 @@ export default function GridFooter() {
   return (
     <section className='grid gap-y-7 md:grid-cols-2'>
       <div className='flex flex-col items-center'>
-        <h2 className='font-bold capitalize mb-4'>Recursos</h2>
+        <h2 className='font-bold capitalize mb-4 dark:text-dark-mode-text-items after:content-["💻"] after:ml-4'>
+          <span className='underline underline-offset-4'>Recursos</span>
+        </h2>
         {resources.map(({ text, url }) => (
           <a
-            className='capitalize'
+            className='capitalize dark:text-dark-mode-text-items hover:font-bold dark:hover:text-white'
             href={url}
             target='_blank'
             rel='noopener noreferrer'
@@ -60,11 +62,13 @@ export default function GridFooter() {
         ))}
       </div>
       <div className='flex flex-col items-center'>
-        <h2 className='font-bold capitalize mb-4'>Certificaciones</h2>
+        <h2 className='font-bold capitalize mb-4 dark:text-dark-mode-text-items after:content-["🎓"] after:ml-4'>
+          <span className='underline underline-offset-4'>Certificaciones</span>
+        </h2>
         {urlCertifications.map(({ text, url }) => (
           <React.Fragment key={crypto.randomUUID()}>
             <a
-              className='capitalize'
+              className='capitalize dark:text-dark-mode-text-items hover:font-bold dark:hover:text-white'
               href={url}
               target='_blank'
               rel='noopener noreferrer'

@@ -25,7 +25,7 @@ export default function Home() {
       <section>
         <FrontPage />
         <div className='pt-24 pb-64 max-w-[800px] mx-auto'>
-          <Title className='mb-8'>
+          <Title className='mb-8' style={{ WebkitTextStroke: '0.5px #ffffff' }}>
             Maikol Vitta - Desarrollador Frontend Jr.
           </Title>
           <AddLinksToParagraph

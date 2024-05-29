@@ -32,8 +32,7 @@ export default function Header({ children, ...props }: PropsHeader) {
             'bg-white',
             'z-[9999]',
             'fixed',
-            'opacity-90',
-            'dark:bg-dark-mode'
+            'opacity-90'
           )
         }
         if (scrollY === 0) {
@@ -41,8 +40,7 @@ export default function Header({ children, ...props }: PropsHeader) {
             'bg-white',
             'z-[9999]',
             'fixed',
-            'opacity-90',
-            'dark:bg-dark-mode'
+            'opacity-90'
           )
         }
       }
@@ -51,7 +49,7 @@ export default function Header({ children, ...props }: PropsHeader) {
 
   return (
     <header ref={refHeader} {...props}>
-      <ContainerHeader className='shadow-md  px-14'>
+      <ContainerHeader className='px-14'>
         <div className='flex flex-wrap justify-center items-center gap-x-3 gap-y-3'>
           <section>
             <Cv />
@@ -83,7 +81,7 @@ export default function Header({ children, ...props }: PropsHeader) {
               <Icon
                 width={30}
                 height={30}
-                className='dark:fill-dark-mode-fill-icons dark:hover:fill-white'
+                className='fill-slate-600 hover:fill-slate-900 dark:fill-dark-mode-fill-icons dark:hover:fill-white'
               />
             </a>
           ))}
