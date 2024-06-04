@@ -1,11 +1,6 @@
-import Github from '@/components/icons/social_media/Github'
-import Linkedin from '@/components/icons/social_media/Linkedin'
+import { iconsSocialMedia } from '@/components/icons/social_media/index'
 
 export default function SocialMedia() {
-  const iconsSocialMedia = [
-    { Icon: Github, url: 'https://github.com/mvitta' },
-    { Icon: Linkedin, url: 'https://www.linkedin.com/in/maikoldevjs/' },
-  ]
   return (
     <section className='flex justify-around items-center gap-2'>
       <div className='flex flex-wrap gap-2'>
@@ -76,12 +71,12 @@ export default function SocialMedia() {
         </span>
       </div>
       <div className='flex gap-x-3'>
-        {iconsSocialMedia.map(({ Icon, url }) => (
+        {iconsSocialMedia.map(({ Icon, url, id }) => (
           <a
             href={url}
             target='_blank'
             rel='noopener noreferrer'
-            key={crypto.randomUUID()}
+            key={id}
             aria-label='icons about social networks'
           >
             <Icon

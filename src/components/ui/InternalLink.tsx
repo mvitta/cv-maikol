@@ -13,11 +13,7 @@ export default function IternalLink({
   ...props
 }: PropsInternalLink) {
   return (
-    <a
-      className={cn('border rounded py-2 px-3', className)}
-      href={href}
-      {...props}
-    >
+    <a className={cn('rounded py-2 px-3', className)} href={href} {...props}>
       {children}
       {text}
     </a>

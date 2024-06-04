@@ -11,7 +11,7 @@ interface PropsCertifications {
   expedition_date: string
   url_certification: string
   institution_logo?: string
-  technologie?: string[]
+  technologies?: { id: number; topic: string }[]
 }
 
 export default function BoxCertifications({
@@ -20,15 +20,16 @@ export default function BoxCertifications({
   expedition_date,
   url_certification,
   institution_logo,
-  technologie,
+  technologies,
 }: PropsCertifications) {
   return (
     <section
       className={twMerge(
         'mb-7 px-2 pt-3 pb-20 relative',
         'grid grid-cols-[auto,_1fr] min-w-[300px] max-w-[700px]',
-        'mx-auto shadow-md border-t-4 border-blue-500 rounded',
-        'dark:shadow-white overflow-hidden'
+        'mx-auto border-t-4 border-t-blue-500 rounded',
+        'shadow-md dark:shadow-slate-700 overflow-hidden',
+        'hover:border-t-blue-800'
       )}
     >
       <div className='absolute right-0 top-5 z-[-1]'>
@@ -86,7 +87,6 @@ export default function BoxCertifications({
         </svg>
       </div>
       <div className='px-3'>
-        <IconCertification width={50} height={50} className='mb-4' />
         {institution_logo ? (
           <Image
             src={institution_logo}
@@ -99,7 +99,7 @@ export default function BoxCertifications({
         )}
       </div>
       <div className='text-start'>
-        <div className='flex flex-col mb-4'>
+        <div className='flex flex-col mb-4 leading-relaxed'>
           <a
             href={url_certification}
             target='_blank'
@@ -116,7 +116,7 @@ export default function BoxCertifications({
           <div className='text-gray-600 dark:text-gray-400'>
             {expedition_date}
           </div>
-          <div>{<Badges technologies={technologie} />}</div>
+          <div>{<Badges technologies={technologies} />}</div>
         </div>
         <div>
           <a

@@ -3,18 +3,19 @@ import Item from '../ui/Item'
 import List from '../ui/List'
 import Endeavor from './icons/Endeavor'
 import Unknown from './icons/Unknown'
-import { useState } from 'react'
+import { ComponentProps, useState } from 'react'
 import Button from './Button'
 import Certification from '../certifications/icons/IconCertification'
+import { twMerge } from 'tailwind-merge'
 
 interface PropsBoxExperience {
+  id: number
   job: string
   company: string
   time: string
   location: string
   description: string[]
-  Icon: JSX.Element
-  index?: number
+  Icon: (props: ComponentProps<'svg'>) => JSX.Element
 }
 
 export default function BoxExperience({
@@ -24,11 +25,18 @@ export default function BoxExperience({
   location,
   description,
   Icon,
-  index,
+  id,
 }: PropsBoxExperience) {
   ;[]
   return (
-    <section className='relative px-2 pt-3 pb-20 grid grid-cols-[auto,_1fr] min-w-[300px] max-w-[700px] mx-auto shadow-md border-t-4 border-blue-500 rounded dark:shadow-white overflow-hidden'>
+    <section
+      className={twMerge(
+        'grid grid-cols-[auto,_1fr] min-w-[300px] max-w-[700px]',
+        'relative px-2 pt-3 pb-20  mx-auto ',
+        'border-t-8 border-blue-500 rounded',
+        'shadow-md dark:shadow-slate-700   overflow-hidden'
+      )}
+    >
       <div className='absolute right-0 top-5 z-[-1]'>
         <svg
           width='238'
@@ -83,10 +91,10 @@ export default function BoxExperience({
           </defs>
         </svg>
       </div>
-      <div className='px-3'>{Icon}</div>
+      <div className='px-3'>{<Icon width={50} height={50} />}</div>
       <div className='text-start'>
         {/* info job */}
-        <div className='flex flex-col mb-4'>
+        <div className='flex flex-col mb-4 leading-relaxed'>
           <div className='font-bold dark:text-white'>{job}</div>
           <div className='dark:text-white'>{company}</div>
           <div className='text-gray-600 dark:text-slate-400'>{time}</div>
@@ -94,19 +102,19 @@ export default function BoxExperience({
         </div>
         {/* description job */}
         <div
-          id={`description-job-${index}`}
+          id={`description-job-${id}`}
           className='h-[100px] overflow-y-hidden'
         >
           <List className='list-inside list-["✅"] dark:text-dark-mode-text-p'>
             {description.map((experience) => (
-              <Item className='mb-2' key={crypto.randomUUID()}>
+              <Item className='mb-2 leading-loose' key={id}>
                 {experience}
               </Item>
             ))}
           </List>
         </div>
         <div className='relative w-full h-[60px]'>
-          <Button id={`description-job-${index}`} />
+          <Button id={`description-job-${id}`} />
         </div>
       </div>
     </section>

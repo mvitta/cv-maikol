@@ -1,18 +1,14 @@
 import { ComponentProps } from 'react'
 
-export default function IconCompany({
-  width,
-  height,
-  ...props
-}: ComponentProps<'svg'>) {
+export default function IconCompany(props: ComponentProps<'svg'>) {
   return (
     <div className='dark:bg-white bg-slate-200'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         xmlnsXlink='http://www.w3.org/1999/xlink'
         fill='#2558D9'
-        width={width}
-        height={height}
+        width={50}
+        height={50}
         viewBox='0 0 50 50'
         className='dark:fill-slate-900'
         {...props}

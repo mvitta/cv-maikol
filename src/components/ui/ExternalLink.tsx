@@ -9,7 +9,7 @@ export default function ExternalLink({
       <a
         target='_blank'
         rel='noopener noreferrer'
-        className='font-light text-blue-500 underline underline-offset-4 contrast-100'
+        className='font-light text-blue-500 hover:text-blue-300 underline underline-offset-4 contrast-100'
         {...props}
       >
         {children}

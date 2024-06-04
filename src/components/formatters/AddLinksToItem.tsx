@@ -18,7 +18,10 @@ export default function AddLinksToItem({
 
   if (!words)
     return (
-      <li className={cn('`mb-5 text-pretty py-1', className)} {...props}>
+      <li
+        className={cn('`mb-5 text-pretty py-1 leading-loose', className)}
+        {...props}
+      >
         {p}
       </li>
     )
@@ -42,7 +45,10 @@ export default function AddLinksToItem({
   parts.push(p.substring(lastIndex))
 
   return (
-    <li className={cn('mb-5 text-pretty py-1', className)} {...props}>
+    <li
+      className={cn('mb-5 text-pretty py-1 leading-loose', className)}
+      {...props}
+    >
       {parts}
     </li>
   )

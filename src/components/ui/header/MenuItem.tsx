@@ -1,18 +1,19 @@
-'use client'
-
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { twMerge } from 'tailwind-merge'
 
 interface PropsMenuItem extends React.LiHTMLAttributes<HTMLLIElement> {
   text: string
   pathname: string
+  fn: () => void
 }
 
 export default function MenuItem({
   text,
   className,
   pathname,
+  fn,
   ...props
 }: PropsMenuItem) {
   const path = usePathname()
@@ -20,33 +21,28 @@ export default function MenuItem({
   return (
     <>
       <li
+        onClick={() => {
+          fn()
+        }}
         className={cn(
-          // tailwindCSS default li
-          'font-light text-xl list-inside list-none text-slate-600',
-          // hover
+          `font-light text-xl list-inside list-none text-slate-600 mb-4`,
           'hover:text-slate-950 hover:font-bold',
-          // animation
           'transition-all duration-200 ease-out',
-          // if pathname is equal to path -> usePathname()
-          path === pathname && 'font-bold text-slate-900 dark:text-white',
-          //dark mode
+          path === pathname &&
+            'font-bold text-slate-900 underline underline-offset-8',
           'dark:text-dark-mode-text-items dark:hover:text-white',
+          'xl:mb-0',
           className
         )}
         {...props}
       >
-        <Link href={pathname} className='py-4 px-3' scroll={false}>
+        <Link
+          href={pathname}
+          className={twMerge('w-full inline-block text-start', '')}
+        >
           {text}
         </Link>
       </li>
     </>
   )
 }
-
-// `text-xl list-inside list-none text-slate-600 ${
-//   className ? ` ${className}` : ''
-// } ${
-//   path === pathname
-//     ? 'ring-1 ring-slate-900 rounded-sm font-bold text-slate-950'
-//     : ''
-// }`

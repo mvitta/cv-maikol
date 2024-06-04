@@ -9,7 +9,7 @@ export default function Dark({
       id='dark'
       name='dark'
       viewBox='0 0 23 23'
-      className={cn(`w-6 h-6`, className)}
+      className={cn(className)}
       {...props}
     >
       <path
