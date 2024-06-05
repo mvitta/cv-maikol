@@ -2,12 +2,12 @@
   content: '';
   position: absolute;
   top: -50px;
-  left: 4px;
+  left: 13px;
   width: 0;
   height: 0;
-  border-bottom: 30px solid;
-  border-left: 19px solid transparent;
-  border-right: 19px solid transparent;
+  border-bottom: 20px solid;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
 }
 
 .btn {

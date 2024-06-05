@@ -6,7 +6,7 @@ export default function Technologies({
   ...props
 }: HTMLAttributes<HTMLElement>) {
   return (
-    <section className='icons' {...props}>
+    <section className={`icons ${className}`} {...props}>
       <div className='icons-slide'>
         {iconsSkills.map(({ Icon, id }) => (
           <Icon className='mx-5 icon-svg' key={id} width={50} height={50} />

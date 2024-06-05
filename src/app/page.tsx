@@ -82,7 +82,7 @@ export default function Home() {
         </div>
         <Container className='mb-10'>
           <ContentWrapper>
-            <Technologies className='mb-10' />
+            <Technologies className='mb-10 mx-auto' />
           </ContentWrapper>
         </Container>
         <Container id='habilidades'>

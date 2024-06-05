@@ -1,6 +1,6 @@
 import Cv from '@/components/icons/Cv'
 import { cn } from '@/lib/utils'
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { twMerge } from 'tailwind-merge'
 import MenuItem from './MenuItem'
 import styles from '@/components/icons/IconNavApp.module.css'

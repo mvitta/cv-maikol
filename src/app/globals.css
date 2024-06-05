@@ -11,7 +11,6 @@ main {
   /* screen less than 640px*/
   width: 350px;
   padding: 1rem 0;
-  margin: 0 auto;
   display: flex;
 }
 

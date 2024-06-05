@@ -6,7 +6,7 @@ import { experiences } from '@/app/experience/data_experience'
 export default function Experience() {
   return (
     <ContainerMain>
-      {experiences.map(({ IconCompany, id, ...res }, index) => {
+      {experiences.map(({ IconCompany, id, ...res }) => {
         return (
           <Container key={id}>
             <BoxExperience Icon={IconCompany} id={id} {...res} />

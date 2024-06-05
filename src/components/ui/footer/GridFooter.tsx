@@ -47,8 +47,8 @@ export default function GridFooter() {
     },
     {
       id: 5,
-      text: 'Github',
-      url: '',
+      text: 'Sobre este proyecto',
+      url: 'https://github.com/mvitta/cv-maikol',
     },
   ]
 

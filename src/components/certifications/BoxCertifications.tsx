@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import IconCertification from './icons/IconCertification'
 import IconLinkExternal from './icons/IconLinkExternal'
 import { twMerge } from 'tailwind-merge'
 import IconCompany from '../icons/IconCompany'

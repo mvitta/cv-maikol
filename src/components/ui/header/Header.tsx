@@ -1,8 +1,6 @@
 'use client'
 
-import Cv from '../../icons/Cv'
 import ContainerHeader from '@/components/containers/ContainerHeader'
-import MenuItem from '@/components/ui/header/MenuItem'
 import NavApp from '@/components/ui/header/NavApp'
 import { iconsSocialMedia } from '@/components/icons/social_media/index'
 import { useEffect, useRef } from 'react'

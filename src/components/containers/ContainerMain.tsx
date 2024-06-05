@@ -1,5 +1,4 @@
 import { cn } from '@/lib/utils'
-import { useTheme } from 'next-themes'
 import ScrollTop from '../ui/ScrollTop'
 
 type PropsContainerMain = React.HTMLAttributes<HTMLElement>

@@ -1,11 +1,9 @@
-import { cn } from '@/lib/utils'
 import Item from '../ui/Item'
 import List from '../ui/List'
-import Endeavor from './icons/Endeavor'
-import Unknown from './icons/Unknown'
-import { ComponentProps, useState } from 'react'
+
+import { ComponentProps } from 'react'
 import Button from './Button'
-import Certification from '../certifications/icons/IconCertification'
+
 import { twMerge } from 'tailwind-merge'
 
 interface PropsBoxExperience {
@@ -108,7 +106,7 @@ export default function BoxExperience({
           <List className='list-inside list-["✅"] dark:text-dark-mode-text-p'>
             {description.map((experience) => (
               <Item className='mb-2 leading-loose' key={id}>
-                {experience}
+                {' ' + experience.trim()}
               </Item>
             ))}
           </List>
