@@ -64,7 +64,6 @@ export default function NavApp({ className, ...props }: PropsNavApp) {
           >
             {items.map(({ id, pathname, text }) => {
               return (
-                // PASAR LA REFERENCIA AL COMPONENTE PARA MANEJAR UN EVENTO DE OCULTAR EL MENU CUANDO SE PRESIONE CLICK EN UN ITEM
                 <MenuItem
                   fn={showNavApp}
                   pathname={pathname}
