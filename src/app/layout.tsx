@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Roboto_Mono, Roboto, Inter } from 'next/font/google'
+import { Roboto_Mono } from 'next/font/google'
 import Header from '@/components/ui/header/Header'
 import Footer from '@/components/ui/footer/Footer'
 import Providers from '@/context/providers'
@@ -23,7 +23,7 @@ export default function RootLayout({
         className={`${roboto_mono.className} antialiased min-w-min dark:bg-dark-mode`}
       >
         <Providers>
-          <Header className='bg-white dark:bg-dark-mode py-4 md-2 w-full transition shadow-md dark:shadow-slate-800' />
+          <Header className='bg-white dark:bg-dark-mode w-full h-[60px] transition shadow-md dark:shadow-slate-800' />
           {children}
           <Footer />
         </Providers>

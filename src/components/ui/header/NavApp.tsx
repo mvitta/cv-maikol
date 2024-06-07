@@ -13,7 +13,7 @@ export default function NavApp({ className, ...props }: PropsNavApp) {
 
   const items = [
     { id: 1, pathname: '/', text: 'Perfil' },
-    { id: 2, pathname: '/experience', text: 'Experiencia Laboral' },
+    { id: 2, pathname: '/experience', text: 'Experiencia' },
     { id: 3, pathname: '/certifications', text: 'Certificaciones' },
   ]
 
@@ -45,29 +45,36 @@ export default function NavApp({ className, ...props }: PropsNavApp) {
       >
         <ul
           className={twMerge(
-            `${styles.navApp} absolute h-min-[300px] h-[500px] pt-20 px-8 z-[99]`,
+            `${styles.navApp} absolute h-min-[300px] h-[500px] pt-20 px-8 z-[99] w-[300px]`,
             'border-t-blue-500 border-t-4 rounded-md mt-12 bg-white shadow-md shadow-blue-500',
             // dark mode
             'dark:bg-dark-mode',
             // screens > 1024
-            'xl:z-0 xl:pt-0 xl:h-auto xl:static xl:flex xl:gap-y-2 xl:gap-x-8 xl:justify-center xl:items-center xl:flex-wrap xl:min-h-16 xl:mt-0 xl:border-none xl:shadow-none xl:dark:shadow-none xl:bg-transparent xl:px-0'
+            'xl:flex xl:gap-x-8 xl:z-0 xl:pt-0 xl:h-auto xl:w-auto xl:static xl:min- xl:mt-0 xl:border-none xl:shadow-none xl:dark:shadow-none xl:bg-transparent xl:px-0'
           )}
         >
           <section>
             <Cv className='absolute left-7 top-3 xl:static' />
           </section>
-          {items.map(({ id, pathname, text }) => {
-            return (
-              // PASAR LA REFERENCIA AL COMPONENTE PARA MANEJAR UN EVENTO DE OCULTAR EL MENU CUANDO SE PRESIONE CLICK EN UN ITEM
-              <MenuItem
-                fn={showNavApp}
-                pathname={pathname}
-                className='mr-4 text-center'
-                text={text}
-                key={id}
-              />
-            )
-          })}
+          <section
+            className={cn(
+              'h-[100px] relative border-l border-solid border-l-gray-300',
+              'xl:border-l-0 xl:flex xl:gap-x-8 xl:justify-center xl:items-center xl:flex-wrap xl:h-auto'
+            )}
+          >
+            {items.map(({ id, pathname, text }) => {
+              return (
+                // PASAR LA REFERENCIA AL COMPONENTE PARA MANEJAR UN EVENTO DE OCULTAR EL MENU CUANDO SE PRESIONE CLICK EN UN ITEM
+                <MenuItem
+                  fn={showNavApp}
+                  pathname={pathname}
+                  className='mr-4 text-center'
+                  text={text}
+                  key={id}
+                />
+              )
+            })}
+          </section>
         </ul>
       </nav>
     </>
