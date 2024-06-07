@@ -1,7 +1,15 @@
-type PropsExternalLink = React.AnchorHTMLAttributes<HTMLAnchorElement>
+import { cn } from '@/lib/utils'
+
+interface PropsExternalLink
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  url?: string
+  text?: string
+}
 
 export default function ExternalLink({
   children,
+  className,
+  text,
   ...props
 }: PropsExternalLink) {
   return (
@@ -10,10 +18,13 @@ export default function ExternalLink({
         href={typeof children === 'string' ? children : ''}
         target='_blank'
         rel='noopener noreferrer'
-        className='font-light text-blue-500 hover:text-blue-300 underline underline-offset-4 contrast-100'
+        className={cn(
+          'font-light text-blue-500 hover:text-blue-300 underline underline-offset-4 contrast-100',
+          className
+        )}
         {...props}
       >
-        {children}
+        {text ? text : children}
       </a>
     </>
   )
