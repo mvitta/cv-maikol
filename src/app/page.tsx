@@ -13,6 +13,8 @@ import ContentWrapper from '@/components/containers/ContentWrapper'
 import IconSkills from '@/components/icons/IconSkills'
 import IconProject from '@/components/icons/IconProject'
 import { profile } from '@/app/data_profile'
+import Paragraph from '@/components/ui/paragraph/Paragraph'
+import ExternalLink from '@/components/ui/ExternalLink'
 
 export default function Home() {
   const {
@@ -173,6 +175,12 @@ export default function Home() {
                 </AddLinksToParagraph>
               )
             })}
+            <Paragraph>
+              Proyecto Dashboard Endeavor:{' '}
+              <ExternalLink>
+                https://drive.google.com/drive/u/0/folders/1xfcVB8CBBv5nvgfPqQyh6XRmBYQCbSzf
+              </ExternalLink>
+            </Paragraph>
           </ContentWrapper>
         </Container>
       </section>
