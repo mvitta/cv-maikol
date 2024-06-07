@@ -25,11 +25,16 @@ export default function MenuItem({
           fn()
         }}
         className={cn(
-          `font-light text-xl list-inside list-none text-slate-600 mb-4`,
-          'hover:text-slate-950 hover:font-bold',
+          'absolute left-[-1px] h-[30px] pl-4 border-l border-l-transparent',
+          `${text.toLowerCase() === 'perfil' && 'top-0'}`,
+          `${text.toLowerCase() === 'experiencia' && 'top-[35px]'}`,
+          `${text.toLowerCase() === 'certificaciones' && 'top-[70px]'}`,
+          'hover:border-l-blue-500 hover:text-slate-950 hover:font-bold',
+          'xl:static xl:border-none',
+          `font-light text-[18px] list-inside list-none text-slate-600`,
           'transition-all duration-200 ease-out',
           path === pathname &&
-            'font-bold text-slate-900 underline underline-offset-8',
+            'font-bold text-slate-900 underline underline-offset-8 decoration-slate-500 border-l-blue-500',
           'dark:text-dark-mode-text-items dark:hover:text-white',
           'xl:mb-0',
           className

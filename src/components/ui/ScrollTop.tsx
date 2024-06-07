@@ -8,8 +8,6 @@ export default function ScrollTop() {
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (refDiv.current) {
-        console.log(window.scrollY)
-
         if (window.scrollY > 720) {
           refDiv.current.classList.remove('hidden')
           refDiv.current.classList.add('block')

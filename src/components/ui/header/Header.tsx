@@ -41,7 +41,7 @@ export default function Header({ children, className, ...props }: PropsHeader) {
             <NavApp />
           </section>
         </div>
-        <section className='flex items-center gap-x-3 py-2'>
+        <section className='flex items-center gap-x-3'>
           <Brand />
           {iconsSocialMedia.map(({ id, Icon, url }) => (
             <a

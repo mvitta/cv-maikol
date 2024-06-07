@@ -11,7 +11,7 @@ export default function ContainerMain({
   return (
     <main
       className={cn(
-        'relative mt-[100px] py-16 px-3 sm:px-6 md:px-32 lg:px-44',
+        'relative mt-[60px] py-16 px-3 sm:px-6 md:px-32 lg:px-44',
         className
       )}
       {...props}
