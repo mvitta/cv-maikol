@@ -177,7 +177,7 @@ export default function Home() {
             })}
             <Paragraph>
               Proyecto Dashboard Endeavor:{' '}
-              <ExternalLink>
+              <ExternalLink text='Dashboard endeavor'>
                 https://drive.google.com/drive/u/0/folders/1xfcVB8CBBv5nvgfPqQyh6XRmBYQCbSzf
               </ExternalLink>
             </Paragraph>
