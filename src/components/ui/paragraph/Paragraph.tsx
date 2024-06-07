@@ -9,10 +9,7 @@ export default function Paragraph({
 }: PropsParagraph) {
   return (
     <p
-      className={cn(
-        'mb-5 text-pretty py-1 dark:text-dark-mode-text-p',
-        className
-      )}
+      className={cn('mb-5 text-pretty py-1 leading-loose', className)}
       {...props}
     >
       {children}
