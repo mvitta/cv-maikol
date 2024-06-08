@@ -169,18 +169,16 @@ export default function Home() {
                       url: 'https://nextjs.org/docs/app/building-your-application/routing/route-handlers',
                     },
                     { text: 'Endeavor', url: 'https://colombia.endeavor.org/' },
+                    {
+                      text: 'Dashboard en Salesforce',
+                      url: 'https://drive.google.com/drive/u/0/folders/1xfcVB8CBBv5nvgfPqQyh6XRmBYQCbSzf',
+                    },
                   ]}
                 >
                   {text}
                 </AddLinksToParagraph>
               )
             })}
-            <Paragraph>
-              Proyecto Dashboard Endeavor:{' '}
-              <ExternalLink text='Dashboard endeavor'>
-                https://drive.google.com/drive/u/0/folders/1xfcVB8CBBv5nvgfPqQyh6XRmBYQCbSzf
-              </ExternalLink>
-            </Paragraph>
           </ContentWrapper>
         </Container>
       </section>
