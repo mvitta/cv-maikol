@@ -14,7 +14,7 @@ export default function Header({ children, className, ...props }: PropsHeader) {
   const refHeader = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
+    function handlerScrollTop() {
       if (refHeader.current) {
         const scrollY = window.scrollY
         if (scrollY > 0) {
@@ -24,9 +24,13 @@ export default function Header({ children, className, ...props }: PropsHeader) {
           refHeader.current.classList.remove('opacity-90')
         }
       }
-    })
+    }
 
-    // remover el evento
+    window.addEventListener('scroll', handlerScrollTop)
+
+    return () => {
+      window.removeEventListener('scroll', handlerScrollTop)
+    }
   }, [])
 
   return (

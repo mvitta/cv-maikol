@@ -18,7 +18,7 @@ export const profile = {
     },
     {
       id: 5,
-      text: 'Conocimientos en manejo de control de versiones con Git y GitHub para alojar proyectos.',
+      text: 'Conocimientos en manejo de control de versiones con Git y GitHub.',
     },
     {
       id: 6,
@@ -28,7 +28,7 @@ export const profile = {
   description: [
     {
       id: 1,
-      text: 'Ingeniero industrial apasionado con la tecnología y desarrollo de aplicaciones, busco vincularme a una empresa que me permita ejercer y potenciar mis destrezas tecnológicas, Ingeniero graduado del programa MisiónTic 2022 en la universidad del norte. Participé en la Hackatón realizada por la misma institución.',
+      text: 'Ingeniero Industrial apasionado con la tecnología y desarrollo de aplicaciones, busco vincularme a una empresa que me permita ejercer y potenciar mis destrezas tecnológicas, graduado del programa Misión TIC 2022 en la Universidad del Norte. Participé en la Hackatón realizada por la misma institución',
     },
     {
       id: 2,
@@ -36,15 +36,24 @@ export const profile = {
     },
     {
       id: 3,
-      text: 'En mi proceso de practicas en Endeavor desarrollé un Dashboard en Salesforce (lightning experience) para la gestión de datos en tiempo real, y así disponer de toda la información, métricas, metas anuales, trimestrales de forma inmediata. El proyecto no pudo escalarse más debido a la finalización de mi tiempo en la fundación. El objetivo era integrarlo con algunas herramientas que ofrecía la licencia de microsoft, Power Bi, Excel, OneDrive etc. Adicionalmente crear una API REST usando las API disponibles de Salesforce y conectarla a WhatsApp (el uso de esta aplicación es muy común para la conexión con emprendedores y todo el staff de Endeavor). Básicamente la app de WhatsApp funcionaria como Frontend, en donde se escribirían comandos y un Backend gestionaría esa información y crearía, entidades, etc. Automáticamente. (en esta gestión muchos campos eran los mismo y solo algunos cambiaban)',
+      text: 'En mi proceso de practicas en Endeavor desarrollé un Dashboard en Salesforce (lightning experience) para la gestión de datos en tiempo real, y así disponer de toda la información, métricas, metas anuales, trimestrales de forma inmediata. El proyecto no pudo escalarse más debido a la finalización de mi tiempo en la fundación. El objetivo era integrarlo con algunas herramientas que ofrecía la licencia de microsoft, Power Bi, Excel, OneDrive, Forms etc. Adicionalmente crear una API REST usando las API disponibles de Salesforce y conectarla a WhatsApp (el uso de esta aplicación es muy común para la conexión con emprendedores y todo el staff de Endeavor). Básicamente la app de WhatsApp funcionaria como Frontend, en donde se escribirían comandos y un Backend gestionaría esa información y crearía, entidades, etc. Automáticamente. (en esta gestión muchos campos eran los mismo y solo algunos cambiaban)',
     },
     {
       id: 4,
       text: 'La documentación del proyecto se realizó en Notion (software para la gestión de proyectos).',
     },
+
     {
       id: 5,
+      text: 'La página actual (https://cv-maikol.vercel.app/) es un proyecto diseñado y construido por mí, ya que ninguna plataforma me ofrecía una forma personalizada de presentar mi curriculum.',
+    },
+    {
+      id: 6,
       text: 'Actualmente estoy en proceso para desarrollar una app con documentos de Google y Drive para Estopas y Rollo para la gestión de inventarios y escalarla a un proyecto con React JS, Golang o Node. O simplemente usar los Server Component o los Route Handlers que ofrece NextJS y usar PostgreSQL con Prisma ya que será un sistema interno.',
+    },
+    {
+      id: 7,
+      text: 'En mi GitHub hay una serie de proyecto pequeños que desarrolle en estos dos últimos años utilizando diferentes lenguajes y tecnologias como: CRUD, API Rest etc. ',
     },
   ],
 }

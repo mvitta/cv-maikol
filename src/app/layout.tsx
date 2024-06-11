@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
-import { Roboto_Mono } from 'next/font/google'
+import { Figtree } from 'next/font/google'
 import Header from '@/components/ui/header/Header'
 import Footer from '@/components/ui/footer/Footer'
 import Providers from '@/context/providers'
 import './globals.css'
 
-const roboto_mono = Roboto_Mono({ subsets: ['latin'] })
+const roboto_mono = Figtree({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Maikol Vitta',
@@ -24,6 +24,7 @@ export default function RootLayout({
       >
         <Providers>
           <Header className='bg-white dark:bg-dark-mode w-full h-[60px] transition shadow-md dark:shadow-slate-800' />
+
           {children}
           <Footer />
         </Providers>

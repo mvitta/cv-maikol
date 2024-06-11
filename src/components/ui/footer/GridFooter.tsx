@@ -47,7 +47,7 @@ export default function GridFooter() {
     },
     {
       id: 5,
-      text: 'Sobre este proyecto',
+      text: 'Codigo de este proyecto',
       url: 'https://github.com/mvitta/cv-maikol',
     },
   ]
@@ -75,16 +75,15 @@ export default function GridFooter() {
           <span className='underline underline-offset-4'>Certificaciones</span>
         </h2>
         {urlCertifications.map(({ id, text, url }) => (
-          <React.Fragment key={id}>
-            <a
-              className='capitalize dark:text-dark-mode-text-items hover:font-bold dark:hover:text-white'
-              href={url}
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              {text}
-            </a>
-          </React.Fragment>
+          <a
+            key={id}
+            className='capitalize dark:text-dark-mode-text-items hover:font-bold dark:hover:text-white'
+            href={url}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            {text}
+          </a>
         ))}
       </div>
     </section>

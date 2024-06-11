@@ -4,6 +4,9 @@ import { useRef } from 'react'
 import { twMerge } from 'tailwind-merge'
 import MenuItem from './MenuItem'
 import styles from '@/components/icons/IconNavApp.module.css'
+import IconProfile from '@/components/icons/IconProfile'
+import IconCertificate from '@/components/icons/IconCertificate'
+import IconJob from '@/components/icons/IconJob'
 
 type PropsNavApp = React.HTMLAttributes<HTMLElement>
 
@@ -12,9 +15,14 @@ export default function NavApp({ className, ...props }: PropsNavApp) {
   const refDiv = useRef<HTMLDivElement>(null)
 
   const items = [
-    { id: 1, pathname: '/', text: 'Perfil' },
-    { id: 2, pathname: '/experience', text: 'Experiencia' },
-    { id: 3, pathname: '/certifications', text: 'Certificaciones' },
+    { id: 1, pathname: '/', text: 'Perfil', Icon: IconProfile },
+    { id: 2, pathname: '/experience', text: 'Experiencia', Icon: IconJob },
+    {
+      id: 3,
+      pathname: '/certifications',
+      text: 'Certificaciones',
+      Icon: IconCertificate,
+    },
   ]
 
   function showNavApp() {
@@ -58,11 +66,12 @@ export default function NavApp({ className, ...props }: PropsNavApp) {
           </section>
           <section
             className={cn(
-              'h-[100px] relative border-l border-solid border-l-gray-300',
+              'h-[100px] relative border-l border-solid border-white',
+              // -------------------------------------------------
               'xl:border-l-0 xl:flex xl:gap-x-8 xl:justify-center xl:items-center xl:flex-wrap xl:h-auto'
             )}
           >
-            {items.map(({ id, pathname, text }) => {
+            {items.map(({ id, pathname, text, Icon }) => {
               return (
                 <MenuItem
                   fn={showNavApp}
@@ -70,6 +79,7 @@ export default function NavApp({ className, ...props }: PropsNavApp) {
                   className='mr-4 text-center'
                   text={text}
                   key={id}
+                  Icon={Icon}
                 />
               )
             })}
