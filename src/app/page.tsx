@@ -13,8 +13,6 @@ import ContentWrapper from '@/components/containers/ContentWrapper'
 import IconSkills from '@/components/icons/IconSkills'
 import IconProject from '@/components/icons/IconProject'
 import { profile } from '@/app/data_profile'
-import Paragraph from '@/components/ui/paragraph/Paragraph'
-import ExternalLink from '@/components/ui/ExternalLink'
 
 export default function Home() {
   const {
@@ -37,7 +35,7 @@ export default function Home() {
                 url: 'https://www.misiontic2022.gov.co/portal/Secciones/Mision-TIC-2022/',
               },
               {
-                text: 'universidad del norte',
+                text: 'Universidad del Norte',
                 url: 'https://www.uninorte.edu.co/web/educacion-continuada/misiontic2022#:~:text=MISI%C3%93N%20TIC%202022%20es%20una,las%20pol%C3%ADticas%20de%20reactivaci%C3%B3n%20econ%C3%B3mica',
               },
               {
@@ -172,6 +170,10 @@ export default function Home() {
                     {
                       text: 'Dashboard en Salesforce',
                       url: 'https://drive.google.com/drive/u/0/folders/1xfcVB8CBBv5nvgfPqQyh6XRmBYQCbSzf',
+                    },
+                    {
+                      text: 'mi GitHub',
+                      url: 'https://github.com/mvitta',
                     },
                   ]}
                 >
